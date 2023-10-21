@@ -3,36 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleControl : MonoBehaviour {
-  private bool destroyable;
-  private bool dying;
-  public float deathTimerSeconds;
+  private enum States {
+    UNINTERACTABLE,
+    DESTROYABLE,
+    DYING,
+    DESPAWNING
+  }
+  private States state;
+  public float despawnTimer;
+  public float timerToChangeSprite;
   public Sprite deadSprite;
   // Start is called before the first frame update
   void Start() {
-    destroyable = false;
-    dying = false;
+    state = States.UNINTERACTABLE;
   }
 
   // Update is called once per frame
   void Update() {
-    if (destroyable) {
-      if (Input.anyKeyDown) {
-        gameObject.GetComponent<SpriteRenderer>().sprite = deadSprite;
-        dying = true;
-      }
-    }
-    if (dying) {
-      deathTimerSeconds -= Time.deltaTime;
-      if (deathTimerSeconds <= 0) {
-        Destroy(gameObject);
-      }
+    switch (state) {
+      case States.DESTROYABLE:
+        if (Input.anyKeyDown) {
+          gameObject.GetComponent<SpriteRenderer>().sprite = deadSprite;
+          state = States.DYING;
+        }
+        break;
+      case States.DYING:
+        timerToChangeSprite -= Time.deltaTime;
+        if (timerToChangeSprite <= 0) {
+          state = States.DESPAWNING;
+        }
+        break;
+      case States.DESPAWNING:
+        despawnTimer -= Time.deltaTime;
+        if (despawnTimer <= 0) {
+          Destroy(gameObject);
+        }
+        break;
     }
   }
   private void OnTriggerEnter2D(Collider2D other) {
-    tag = other.tag;
-    switch (tag) {
+    string otherTag = other.tag;
+    switch (otherTag) {
       case "Player":
-        destroyable = true;
+        state = States.DESTROYABLE;
         break;
     }
   }
