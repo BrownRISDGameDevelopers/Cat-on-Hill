@@ -84,5 +84,6 @@ EditorUserSettings.asset
 # DS_Store
 **/.DS_Store
 
-# .vsconfig
+# vscode stuff
 .vsconfig
+.history/
