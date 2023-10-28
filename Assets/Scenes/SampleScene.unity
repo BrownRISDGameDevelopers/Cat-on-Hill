@@ -600,11 +600,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2031472084080338468, guid: 93db77eaa44fad641beba2019673bff7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.98
+      value: 33.48
       objectReference: {fileID: 0}
     - target: {fileID: 2031472084080338468, guid: 93db77eaa44fad641beba2019673bff7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.63296
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 2031472084080338468, guid: 93db77eaa44fad641beba2019673bff7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -641,6 +641,10 @@ PrefabInstance:
     - target: {fileID: 4057160910619257343, guid: 93db77eaa44fad641beba2019673bff7, type: 3}
       propertyPath: m_Name
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337641816413855405, guid: 93db77eaa44fad641beba2019673bff7, type: 3}
+      propertyPath: beat
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6337641816413855405, guid: 93db77eaa44fad641beba2019673bff7, type: 3}
       propertyPath: deadSprite

@@ -13,9 +13,12 @@ public class ObstacleControl : MonoBehaviour {
   public float despawnTimer;
   public float timerToChangeSprite;
   public Sprite deadSprite;
+  public float beat;
   // Start is called before the first frame update
   void Start() {
     state = States.UNINTERACTABLE;
+    // beat gives us the starting x position, offset b/c character starts at -7.04
+    transform.position = new Vector3(beat - 3.04f, transform.position.y, transform.position.z);
   }
 
   // Update is called once per frame
