@@ -14,11 +14,13 @@ public class ObstacleControl : MonoBehaviour {
   public float timerToChangeSprite;
   public Sprite deadSprite;
   public float beat;
+  private float camSize;
   // Start is called before the first frame update
   protected virtual void Start() {
     state = States.UNINTERACTABLE;
-    // beat gives us the starting x position, offset b/c character starts at -7.04
-    transform.position = new Vector3(beat + 2.56f, transform.position.y, transform.position.z);
+    // beat gives us the starting x position, offset by camSize/2
+    camSize = Camera.main.orthographicSize * Camera.main.aspect;
+    transform.position = new Vector3(beat - camSize / 2, transform.position.y, transform.position.z);
   }
 
   // Update is called once per frame

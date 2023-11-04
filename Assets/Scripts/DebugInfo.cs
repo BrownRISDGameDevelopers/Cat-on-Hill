@@ -7,19 +7,18 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class DebugInfo : MonoBehaviour {
-  private GameObject player;
-  private TextMeshPro debugText;
+  public Text debugText;
   private static float beatsElapsed;
+  private float camSize;
   // Start is called before the first frame update
   void Start() {
-    debugText = gameObject.GetComponent<TextMeshPro>();
+
   }
 
   // Update is called once per frame
   void Update() {
     beatsElapsed = Camera.main.transform.position.x;
     if (Input.GetKey(KeyCode.Tab)) {
-      Debug.Log("Tab held");
       debugText.text = "Beats Elapsed: " + (Mathf.Round(beatsElapsed * 100f) / 100);
     }
     else {
