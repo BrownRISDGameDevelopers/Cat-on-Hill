@@ -26,7 +26,6 @@ public class BouncingObstacle : ObstacleControl {
   }
   protected override void OnTriggerEnter2D(Collider2D other) {
     string otherTag = other.tag;
-    Debug.Log("Collided " + otherTag);
     switch (otherTag) {
       case "Floor":
         yVel *= -1;

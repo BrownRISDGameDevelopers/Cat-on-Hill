@@ -20,7 +20,7 @@ public class PlayerAudio : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-    if (Input.anyKeyDown) {
+    if (Input.GetKeyDown("space")) {
       switch (sound2play) {
         case Sounds.WHIFF:
           sfxPlayer.PlayOneShot(whiffSound, 0.25f);

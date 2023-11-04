@@ -18,7 +18,7 @@ public class ObstacleControl : MonoBehaviour {
   protected virtual void Start() {
     state = States.UNINTERACTABLE;
     // beat gives us the starting x position, offset b/c character starts at -7.04
-    transform.position = new Vector3(beat - 3.04f, transform.position.y, transform.position.z);
+    transform.position = new Vector3(beat + 2.56f, transform.position.y, transform.position.z);
   }
 
   // Update is called once per frame
