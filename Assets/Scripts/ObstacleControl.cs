@@ -25,7 +25,7 @@ public class ObstacleControl : MonoBehaviour {
   protected virtual void Update() {
     switch (state) {
       case States.DESTROYABLE:
-        if (Input.anyKeyDown) {
+        if (Input.GetKey("space")) {
           gameObject.GetComponent<SpriteRenderer>().sprite = deadSprite;
           state = States.DYING;
         }
