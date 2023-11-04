@@ -71,6 +71,7 @@ public class ObstacleControl : MonoBehaviour {
     Debug.Log("Beat diff " + beatDiff);
     if (Math.Abs(beatDiff) < PERFECT_THRESHOLD) {
       Debug.Log("Perfect");
+    
     }
     else if (beatDiff > PERFECT_THRESHOLD && beatDiff < MISTIME_THRESHOLD) {
       Debug.Log("Early");

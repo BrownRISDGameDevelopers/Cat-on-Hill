@@ -23,6 +23,8 @@ public class DebugInfo : MonoBehaviour {
     }
     else {
       debugText.text = "Beat: " + (Mathf.Round(beatsElapsed * 100f) / 100);
+      // During the actual build:
+      //debugText.text = null;
     }
   }
 
