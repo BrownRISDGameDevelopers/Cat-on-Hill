@@ -101,3 +101,5 @@ MonoBehaviour:
   timerToChangeSprite: 0.5
   deadSprite: {fileID: 0}
   beat: 1
+  PERFECT_THRESHOLD: 0.5
+  MISTIME_THRESHOLD: 1

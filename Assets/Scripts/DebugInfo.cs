@@ -17,9 +17,9 @@ public class DebugInfo : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-    beatsElapsed = Camera.main.transform.position.x;
+    beatsElapsed = Camera.main.transform.position.x + 1;
     if (Input.GetKey(KeyCode.Tab)) {
-      debugText.text = "Beats Elapsed: " + (Mathf.Round(beatsElapsed * 100f) / 100);
+      debugText.text = "Beat: " + (Mathf.Round(beatsElapsed * 100f) / 100);
     }
     else {
       debugText.text = null;
