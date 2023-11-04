@@ -100,3 +100,4 @@ MonoBehaviour:
   despawnTimer: 3
   timerToChangeSprite: 0.5
   deadSprite: {fileID: 0}
+  beat: 1
