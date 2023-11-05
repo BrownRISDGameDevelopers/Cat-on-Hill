@@ -25,7 +25,7 @@ public class ObstacleControl : MonoBehaviour {
     // beat gives us the starting x position, offset by camSize/2
     camSize = Camera.main.orthographicSize * Camera.main.aspect;
     BoxCollider2D collider = GetComponent<BoxCollider2D>();
-    transform.position = new Vector3(beat - 4, transform.position.y, transform.position.z);
+    transform.position = new Vector3(beat - 4 - 0.38f - 0.52f, transform.position.y, transform.position.z);
   }
 
   // Update is called once per frame
@@ -75,6 +75,7 @@ public class ObstacleControl : MonoBehaviour {
     }
     else if (beatDiff > PERFECT_THRESHOLD && beatDiff < MISTIME_THRESHOLD) {
       Debug.Log("Early");
+      
     }
     else if (beatDiff < -PERFECT_THRESHOLD && beatDiff > -MISTIME_THRESHOLD) {
       Debug.Log("Late");

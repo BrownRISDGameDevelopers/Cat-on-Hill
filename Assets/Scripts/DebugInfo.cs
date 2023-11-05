@@ -22,9 +22,9 @@ public class DebugInfo : MonoBehaviour {
       debugText.text = "Beat: " + (Mathf.Round(beatsElapsed * 100f) / 100);
     }
     else {
-      debugText.text = "Beat: " + (Mathf.Round(beatsElapsed * 100f) / 100);
+      //debugText.text = "Beat: " + (Mathf.Round(beatsElapsed * 100f) / 100);
       // During the actual build:
-      //debugText.text = null;
+      debugText.text = null;
     }
   }
 
