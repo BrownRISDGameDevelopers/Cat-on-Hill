@@ -26,4 +26,9 @@ public class ScoreManager : MonoBehaviour
         overall_score += score;
         scoreText.text = "SCORE: " + overall_score.ToString();
     }
+
+    //TODO
+    public void PlayParticles() {
+        print(":P");
+    }
 }
