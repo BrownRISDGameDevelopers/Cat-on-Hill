@@ -42,7 +42,7 @@ public class ObstacleControl : MonoBehaviour {
   protected virtual void Update() {
     switch (state) {
       case States.DESTROYABLE:
-        if (Input.GetKey("space")) {
+        if (Input.GetKeyDown("space")) {
           gameObject.GetComponent<SpriteRenderer>().sprite = deadSprite;
           calcScore(DebugInfo.getBeatsElapsed());
           // var em = deathParticleSystem.emission;
