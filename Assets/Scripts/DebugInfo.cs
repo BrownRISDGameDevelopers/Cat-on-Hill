@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class DebugInfo : MonoBehaviour {
   public Text debugText;
   private static float beatsElapsed;
-  private float camSize;
+  public static float scaleFactor = 4f;
   // Start is called before the first frame update
   void Start() {
 
@@ -17,14 +17,14 @@ public class DebugInfo : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-    beatsElapsed = Camera.main.transform.position.x;
+    beatsElapsed = Camera.main.transform.position.x / scaleFactor;
     if (Input.GetKey(KeyCode.Tab)) {
       debugText.text = "Beat: " + (Mathf.Round(beatsElapsed * 100f) / 100);
     }
     else {
-      //debugText.text = "Beat: " + (Mathf.Round(beatsElapsed * 100f) / 100);
+      debugText.text = "Beat: " + (Mathf.Round(beatsElapsed * 100f) / 100);
       // During the actual build:
-      debugText.text = null;
+      //debugText.text = null;
     }
   }
 

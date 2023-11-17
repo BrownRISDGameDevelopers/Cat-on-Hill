@@ -16,7 +16,6 @@ public class ObstacleControl : MonoBehaviour {
   public float timerToChangeSprite;
   public Sprite deadSprite;
   public float beat;
-  private float camSize;
   public float PERFECT_THRESHOLD;
   public float MISTIME_THRESHOLD;
   private float deathxVel;
@@ -28,10 +27,10 @@ public class ObstacleControl : MonoBehaviour {
   // Start is called before the first frame update
   protected virtual void Start() {
     state = States.UNINTERACTABLE;
-    // beat gives us the starting x position, offset by camSize/2
-    camSize = Camera.main.orthographicSize * Camera.main.aspect;
     BoxCollider2D collider = GetComponent<BoxCollider2D>();
-    transform.position = new Vector3(beat - 4 - 0.38f - 0.52f, transform.position.y, transform.position.z);
+
+    transform.position = new Vector3((beat * DebugInfo.scaleFactor) - 1.5f, transform.position.y, transform.position.z);
+    beat += 1.3f;
     deathxVel = -12.5f;
     deathyVel = 12.5f;
     deathSpinSpeed = 2250f;
@@ -85,18 +84,16 @@ public class ObstacleControl : MonoBehaviour {
 
   protected virtual void calcScore(float beatPressed) {
     Debug.Log("Pressed on " + beatPressed);
-    float beatDiff = (beat - beatPressed);
+    float beatDiff = (beatPressed - beat);
     Debug.Log("Beat diff " + beatDiff);
     if (Math.Abs(beatDiff) < PERFECT_THRESHOLD) {
       Debug.Log("Perfect");
-
     }
     else if (beatDiff > PERFECT_THRESHOLD && beatDiff < MISTIME_THRESHOLD) {
-      Debug.Log("Early");
-
+      Debug.Log("Late");
     }
     else if (beatDiff < -PERFECT_THRESHOLD && beatDiff > -MISTIME_THRESHOLD) {
-      Debug.Log("Late");
+      Debug.Log("Early");
     }
     else {
       Debug.Log("Miss");

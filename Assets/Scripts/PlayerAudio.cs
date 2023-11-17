@@ -23,10 +23,10 @@ public class PlayerAudio : MonoBehaviour {
     if (Input.GetKeyDown("space")) {
       switch (sound2play) {
         case Sounds.WHIFF:
-          sfxPlayer.PlayOneShot(whiffSound, 0.25f);
+          //sfxPlayer.PlayOneShot(whiffSound, 0.25f);
           break;
         case Sounds.HIT:
-          sfxPlayer.PlayOneShot(hitSound, 0.25f);
+          //sfxPlayer.PlayOneShot(hitSound, 0.25f);
           break;
       }
     }
