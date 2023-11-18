@@ -23,6 +23,7 @@ public class ObstacleControl : MonoBehaviour {
   private float deathSpinSpeed;
   private float deathMaxHeight;
   public ParticleSystem deathParticleSystem;
+  public ScoreManager scoreManager;
 
   // Start is called before the first frame update
   protected virtual void Start() {
@@ -84,14 +85,19 @@ public class ObstacleControl : MonoBehaviour {
     Debug.Log("Pressed on " + beatPressed);
     float beatDiff = (beatPressed - beat);
     Debug.Log("Beat diff " + beatDiff);
+    float perfect_score = 300f;
+    float score = perfect_score * (1 - (Math.Abs(beatDiff) - PERFECT_THRESHOLD) / (MISTIME_THRESHOLD - PERFECT_THRESHOLD));
     if (Math.Abs(beatDiff) < PERFECT_THRESHOLD) {
       Debug.Log("Perfect");
+      scoreManager.UpdateScore(Mathf.RoundToInt(perfect_score));
     }
     else if (beatDiff > PERFECT_THRESHOLD && beatDiff < MISTIME_THRESHOLD) {
-      Debug.Log("Late");
+      Debug.Log("Early");
+      scoreManager.UpdateScore(Mathf.RoundToInt(score));
     }
     else if (beatDiff < -PERFECT_THRESHOLD && beatDiff > -MISTIME_THRESHOLD) {
-      Debug.Log("Early");
+      Debug.Log("Late");
+      scoreManager.UpdateScore(Mathf.RoundToInt(score));
     }
     else {
       Debug.Log("Miss");
