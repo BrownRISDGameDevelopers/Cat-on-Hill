@@ -28,9 +28,7 @@ public class ObstacleControl : MonoBehaviour {
   protected virtual void Start() {
     state = States.UNINTERACTABLE;
     BoxCollider2D collider = GetComponent<BoxCollider2D>();
-
-    transform.position = new Vector3((beat * DebugInfo.scaleFactor) - 1.5f, transform.position.y, transform.position.z);
-    beat += 1.3f;
+    transform.position = new Vector3((beat * DebugInfo.scaleFactor), transform.position.y, transform.position.z);
     deathxVel = -12.5f;
     deathyVel = 12.5f;
     deathSpinSpeed = 2250f;
@@ -50,9 +48,9 @@ public class ObstacleControl : MonoBehaviour {
           state = States.DYING;
         }
         // Despawn if you go off screen
-        if (DebugInfo.getBeatsElapsed() > beat + 2) {
-          state = States.DESPAWNING;
-        }
+        // if (DebugInfo.getBeatsElapsed() > beat + 2) {
+        //   state = States.DESPAWNING;
+        // }
         break;
       case States.DYING:
         timerToChangeSprite -= Time.deltaTime;

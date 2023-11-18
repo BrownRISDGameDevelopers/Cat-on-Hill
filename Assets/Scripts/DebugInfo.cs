@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class DebugInfo : MonoBehaviour {
   public Text debugText;
   private static float beatsElapsed;
-  public static float scaleFactor = 4f;
+  public static float scaleFactor = 6f;
   // Start is called before the first frame update
   void Start() {
 
