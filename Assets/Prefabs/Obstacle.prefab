@@ -104,4 +104,4 @@ MonoBehaviour:
   PERFECT_THRESHOLD: 0.5
   MISTIME_THRESHOLD: 1
   deathParticleSystem: {fileID: 0}
-  scoreManager: {fileID: 0}
+  scoreManager: {fileID: 8358274657081424447, guid: 992f041d952365a4ca9e4587d75bf419, type: 3}

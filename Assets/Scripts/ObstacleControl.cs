@@ -29,7 +29,8 @@ public class ObstacleControl : MonoBehaviour {
   protected virtual void Start() {
     state = States.UNINTERACTABLE;
     BoxCollider2D collider = GetComponent<BoxCollider2D>();
-    transform.position = new Vector3((beat * DebugInfo.scaleFactor), transform.position.y, transform.position.z);
+    transform.position = new Vector3((beat * DebugInfo.scaleFactor) - 1.5f, transform.position.y, transform.position.z);
+    beat += 1.3f;
     deathxVel = -12.5f;
     deathyVel = 12.5f;
     deathSpinSpeed = 2250f;
@@ -92,11 +93,11 @@ public class ObstacleControl : MonoBehaviour {
       scoreManager.UpdateScore(Mathf.RoundToInt(perfect_score));
     }
     else if (beatDiff > PERFECT_THRESHOLD && beatDiff < MISTIME_THRESHOLD) {
-      Debug.Log("Early");
+      Debug.Log("Late");
       scoreManager.UpdateScore(Mathf.RoundToInt(score));
     }
     else if (beatDiff < -PERFECT_THRESHOLD && beatDiff > -MISTIME_THRESHOLD) {
-      Debug.Log("Late");
+      Debug.Log("Early");
       scoreManager.UpdateScore(Mathf.RoundToInt(score));
     }
     else {
