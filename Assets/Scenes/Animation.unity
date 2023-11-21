@@ -136,14 +136,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 538781908}
     - target: {fileID: 3878616533201981629, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ec3ce383a6f06481f9603e54e73298da, type: 3}
-    - target: {fileID: 3878616533201981629, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878616533201981629, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -154,14 +146,6 @@ PrefabInstance:
     - target: {fileID: 3878616533201981629, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
       propertyPath: m_Color.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3909556851664548805, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3909556851664548805, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.816
       objectReference: {fileID: 0}
     - target: {fileID: 7176492862529177197, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
       propertyPath: m_Name
@@ -210,37 +194,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7176492862529177197, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 538781908}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
---- !u!1 &538781907 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7176492862529177197, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
+--- !u!95 &538781908 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4585906922143749496, guid: f104c91f659f87d4c9313f3ae0a37895, type: 3}
   m_PrefabInstance: {fileID: 538781906}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &538781908
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538781907}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3d575143356844872817848553cddd4b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1561805195
 GameObject:
   m_ObjectHideFlags: 0
