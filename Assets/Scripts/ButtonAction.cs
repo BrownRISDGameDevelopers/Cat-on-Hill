@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonAction : MonoBehaviour
 {
+
+    public Animator animator;
+    public float transitionTime = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,15 @@ public class ButtonAction : MonoBehaviour
 
     public void MoveToScene(int sceneID) 
     {
+        StartCoroutine(SceneTransition(sceneID));
+    }
+
+    IEnumerator SceneTransition(int sceneID)
+    {
+        animator.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
         SceneManager.LoadScene(sceneID);
     }
 }
