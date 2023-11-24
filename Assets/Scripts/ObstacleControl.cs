@@ -24,17 +24,18 @@ public class ObstacleControl : MonoBehaviour {
   private float deathMaxHeight;
   public ParticleSystem deathParticleSystem;
   public ScoreManager scoreManager;
+  private BoxCollider2D collider;
 
   // Start is called before the first frame update
   protected virtual void Start() {
     state = States.UNINTERACTABLE;
-    BoxCollider2D collider = GetComponent<BoxCollider2D>();
+    collider = GetComponent<BoxCollider2D>();
     transform.position = new Vector3((beat * DebugInfo.scaleFactor) - 1.5f, transform.position.y, transform.position.z);
     beat += 1.3f;
     deathxVel = -12.5f;
-    deathyVel = 12.5f;
+    deathyVel = 25f;
     deathSpinSpeed = 2250f;
-    deathMaxHeight = 4f;
+    deathMaxHeight = 10f;
   }
 
   // Update is called once per frame
@@ -55,6 +56,7 @@ public class ObstacleControl : MonoBehaviour {
         // }
         break;
       case States.DYING:
+        collider.enabled = false;
         timerToChangeSprite -= Time.deltaTime;
         transform.Rotate(0, 0, deathSpinSpeed * Time.deltaTime);
         transform.position += new Vector3(deathxVel * Time.deltaTime, deathyVel * Time.deltaTime, 0);
@@ -78,6 +80,9 @@ public class ObstacleControl : MonoBehaviour {
     switch (otherTag) {
       case "Player":
         state = States.DESTROYABLE;
+        break;
+      case "Mom":
+        state = States.DYING;
         break;
     }
   }

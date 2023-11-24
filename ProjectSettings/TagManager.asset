@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Floor
+  - Mom
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 612144937
+    locked: 0
+  - name: Mom
+    uniqueID: 967383069
     locked: 0
