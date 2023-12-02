@@ -7,7 +7,7 @@ public class ButtonAction : MonoBehaviour
 {
 
     public Animator animator;
-    public float transitionTime = 0.5   f;
+    public float transitionTime = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
