@@ -18,13 +18,12 @@ public class FadeTransition : MonoBehaviour {
   }
 
   public void MoveToScene(int sceneID) {
-    SceneManager.LoadScene(sceneID);
-    //StartCoroutine(SceneTransition(sceneID));
+    StartCoroutine(SceneTransition(sceneID));
   }
 
   IEnumerator SceneTransition(int sceneID) {
     animator.SetTrigger("Start");
-
-    yield return SceneManager.LoadSceneAsync(sceneID); ;
+    yield return new WaitForSeconds(transitionTime);
+    SceneManager.LoadScene(sceneID);
   }
 }
