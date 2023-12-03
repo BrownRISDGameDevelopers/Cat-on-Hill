@@ -15,7 +15,7 @@ public class EndTutorialTimer : MonoBehaviour {
     if (tutorialTime <= 0) {
       FadeTransition transitioner = GetComponent<FadeTransition>();
       AudioSource bgm = GameObject.Find("BGM").GetComponent<AudioSource>();
-      transitioner.MoveToScene(6);
+      transitioner.MoveToScene(4);
       fadeAudio(bgm);
     }
   }
