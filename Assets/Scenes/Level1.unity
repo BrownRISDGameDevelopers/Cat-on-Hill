@@ -3435,7 +3435,7 @@ PrefabInstance:
     - target: {fileID: 6337641816413855405, guid: 4676a412e69173b4d98b019ba2213a5c, type: 3}
       propertyPath: deadSprite
       value: 
-      objectReference: {fileID: 21300000, guid: f3648b6f31f7a4b3197259be5215b868, type: 3}
+      objectReference: {fileID: 21300000, guid: a8c7b30fbef2c4fcb80bb0cd75100eed, type: 3}
     - target: {fileID: 6337641816413855405, guid: 4676a412e69173b4d98b019ba2213a5c, type: 3}
       propertyPath: scoreManager
       value: 
