@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   despawnTimer: 3
-  timerToChangeSprite: 0.5
+  dyingAnimTimer: 1
   deadSprite: {fileID: 21300000, guid: 5618d01e5f59e4cfb931cb033ca4e299, type: 3}
   beat: 1
   PERFECT_THRESHOLD: 0.5

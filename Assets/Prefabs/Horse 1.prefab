@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   despawnTimer: 3
-  timerToChangeSprite: 0.5
+  dyingAnimTimer: 1
   deadSprite: {fileID: 21300000, guid: a8c7b30fbef2c4fcb80bb0cd75100eed, type: 3}
   beat: 165
   PERFECT_THRESHOLD: 0.5
@@ -149,5 +149,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.8, y: 3}
+  m_Size: {x: 3.8, y: 2.8}
   m_EdgeRadius: 0

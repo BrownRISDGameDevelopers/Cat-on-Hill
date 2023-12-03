@@ -13,7 +13,7 @@ public class ObstacleControl : MonoBehaviour {
   }
   protected States state;
   public float despawnTimer;
-  public float timerToChangeSprite;
+  public float dyingAnimTimer;
   public Sprite deadSprite;
   public float beat;
   public float PERFECT_THRESHOLD;
@@ -57,13 +57,13 @@ public class ObstacleControl : MonoBehaviour {
         break;
       case States.DYING:
         collider.enabled = false;
-        timerToChangeSprite -= Time.deltaTime;
+        dyingAnimTimer -= Time.deltaTime;
         transform.Rotate(0, 0, deathSpinSpeed * Time.deltaTime);
         transform.position += new Vector3(deathxVel * Time.deltaTime, deathyVel * Time.deltaTime, 0);
         if (transform.position.y >= deathMaxHeight) {
           deathyVel *= -1;
         }
-        if (timerToChangeSprite <= 0) {
+        if (dyingAnimTimer <= 0) {
           state = States.DESPAWNING;
         }
         break;
@@ -77,6 +77,7 @@ public class ObstacleControl : MonoBehaviour {
   }
   protected virtual void OnTriggerEnter2D(Collider2D other) {
     string otherTag = other.tag;
+    if (state == States.DYING || state == States.DESPAWNING) return;
     switch (otherTag) {
       case "Player":
         state = States.DESTROYABLE;
