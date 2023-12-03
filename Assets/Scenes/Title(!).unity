@@ -683,7 +683,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1769775119}
-        m_TargetAssemblyTypeName: ButtonAction, Assembly-CSharp
+        m_TargetAssemblyTypeName: FadeTransition, Assembly-CSharp
         m_MethodName: MoveToScene
         m_Mode: 3
         m_Arguments:
@@ -744,6 +744,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104642c1b1d034d70a8655014b1a9cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  transitionTime: 0.5
+  audioSource: {fileID: 0}
+  sceneID: 0
 --- !u!1 &2124113934
 GameObject:
   m_ObjectHideFlags: 0
