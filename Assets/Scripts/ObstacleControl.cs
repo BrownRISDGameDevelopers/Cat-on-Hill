@@ -25,13 +25,15 @@ public class ObstacleControl : MonoBehaviour {
   public ParticleSystem deathParticleSystem;
   public ScoreManager scoreManager;
   private BoxCollider2D collider;
+  public float beatOffset = 1.3f;
+  public float positionScale = 0f;
 
   // Start is called before the first frame update
   protected virtual void Start() {
     state = States.UNINTERACTABLE;
     collider = GetComponent<BoxCollider2D>();
-    transform.position = new Vector3((beat * DebugInfo.scaleFactor) - 1.5f, transform.position.y, transform.position.z);
-    beat += 1.3f;
+    transform.position = new Vector3((beat * DebugInfo.scaleFactor) - 1.5f + positionScale, transform.position.y, transform.position.z);
+    beat += beatOffset;
     deathxVel = -12.5f;
     deathyVel = 25f;
     deathSpinSpeed = 2250f;
