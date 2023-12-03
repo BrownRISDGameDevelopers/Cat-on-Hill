@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         overall_score = 0;
-        scoreText.text = "SCORE: " + overall_score.ToString();
+        scoreText.text = "SCORE " + overall_score.ToString();
 
     }
 
@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore(int score) {
         overall_score += score;
-        scoreText.text = "SCORE: " + overall_score.ToString();
+        scoreText.text = "SCORE " + overall_score.ToString();
     }
 
     //TODO
