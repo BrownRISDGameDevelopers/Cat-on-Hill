@@ -7,6 +7,10 @@ public class FadeTransition : MonoBehaviour {
 
   public Animator animator;
   public float transitionTime = 0.5f;
+
+  public AudioSource audioSource;
+
+  public int sceneID;
   // Start is called before the first frame update
   void Start() {
 
@@ -14,7 +18,11 @@ public class FadeTransition : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-
+    if (audioSource != null) {
+      if (!audioSource.isPlaying) {
+        MoveToScene(sceneID);
+      }
+    }
   }
 
   public void MoveToScene(int sceneID) {
