@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class FadeTransition : MonoBehaviour {
 
   public Animator animator;
-  public float transitionTime = 0.5f;
+  public float transitionTime;
 
   public AudioSource audioSource;
 
